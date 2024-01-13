@@ -1,0 +1,117 @@
+/* custom properties */
+
+*,
+*::before,
+*::after {
+        box-sizing: border-box;
+}
+
+:root {
+    --fontfamily-primary: 'Source Sans Pro', sans-serif;
+    --fontfamily-secondary: 'Source Code Pro', monospace;
+
+    --fontweight-reg: 300;
+    --fontweight-bold: 900;
+
+    --clr-light: #fff;
+    --clr-dark: #303030;
+    --clr-accent: #16e0bd;
+
+    --fontsize-h1: 3rem;
+    --fontsize-h2: 2.25rem;
+    --fontsize-h3: 1.25rem;
+    --fontsize-body: 1rem;
+}
+
+@media (min-width: 800px) {
+    :root {
+        --fontsize-h1: 4.5rem;
+        --font-size-h2: 3.75rem;
+        --fontsize-h3: 1.5rem;
+        --fontsize-body: 1.125rem;
+    }
+}
+
+/* general styles */
+
+body {
+    background: var(--clr-light);
+    color: var(--clr-dark);
+    margin: 0;
+    font-family: var(--fontfamily-primary);
+    font-size: var(--fontsize-body);
+    line-height: 1.6;
+}
+
+section {
+    padding: 5em 2em;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1;
+    margin: 0;
+}
+
+h1 {font-size: var(--fontsize-h1)}
+h2 {font-size: var(--fontsize-h2)}
+h3 {font-size: var(--fontsize-h3)}
+
+.section__title {
+    margin-bottom: 0.25em;
+}
+
+.section__title--intro {
+    font-weight: var(--fontweight-reg)
+}
+
+.section__title--intro strong {
+    display: block;
+}
+
+.section__subtitle {
+    margin: 0;
+    font-size: var(--fontsize-h3);
+}
+
+.section__subtitle--intro,
+.section__subtitle--about {
+    background: var(--clr-accent);
+    font-family: var(--fontfamily-secondary);
+    margin-bottom: 1em;
+}
+
+/* header */
+
+nav {
+    display: none;
+}
+
+/* intro section */
+
+.intro {
+    position: relative;
+}
+
+@media (min-width: 600px) {
+    .intro {
+        display: grid;
+        grid-column-gap: 1em;
+        width: min-content;
+        margin: 0 auto;
+        grid-template-areas: "img title" "img subtitle";
+        grid-template-columns: min-content max-content;
+    }
+
+    .intro__img {
+        grid-area: img;
+        min-width: 250px;
+    }
+
+}
