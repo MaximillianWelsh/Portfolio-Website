@@ -1,5 +1,4 @@
 /* custom properties */
-
 *,
 *::before,
 *::after {
@@ -28,13 +27,17 @@
 @media (min-width: 800px) {
     :root {
         --fontsize-h1: 4.5rem;
-        --font-size-h2: 3.75rem;
+        --fontsize-h2: 3.75rem;
         --fontsize-h3: 1.5rem;
         --fontsize-body: 1.125rem;
     }
 }
 
 /* general styles */
+
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     background: var(--clr-light);
@@ -154,7 +157,7 @@ header {
 .nav__link {
     color: inherit;
     font-weight: var(--fontweight-bold);
-    font-size: var(--font-size-h2);
+    font-size: var(--fontsize-h2);
     text-decoration: none;
 }
 
@@ -174,6 +177,27 @@ header {
 
 }
 
+.nav-open .nav {
+    transform: translateX(0);
+}
+
+.nav-open .nav-toggle {
+    position: fixed;
+}
+
+.nav-open .hamburger {
+    transform: rotate(.625turn)
+}
+
+.nav-open .hamburger::before {
+    transform: rotate(90deg) translateX(-6px);
+}
+
+.nav-open .hamburger::after {
+    opacity: 0;
+
+}
+
 .hamburger {
     display: block;
     position: relative;
@@ -182,7 +206,7 @@ header {
 .hamburger,
 .hamburger::before,
 .hamburger::after {
-    background: var(--clr-dark);
+    background: var(--clr-accent);
     width: 2em;
     height: 3px;
     border-radius: 1em;
@@ -244,7 +268,7 @@ header {
 
 /* my services section */
 
-.my-services {
+.services {
     background-color: var(--clr-dark);
     background-image: url();
     color: var(--clr-light);
@@ -268,22 +292,23 @@ header {
 
 }
 
-.services {
-    margin-bottom: 4em;
-}
-
 .service {
-    max-width: 500px;
+    max-width: 600px;
     margin: 0 auto;
 }
 
 @media (min-width: 800px) {
-    .services {
+    
+    .services-div {
         display: flex;
         max-width: 1000px;
-        margin-left: auto;
-        margin-right: auto;
-    }
+        margin: 0 auto;
+        }
+        
+    .service + .service {
+            margin-left: 2em;
+        }
+        
 
 }
 
@@ -323,7 +348,7 @@ header {
         padding-right: calc(200px + 4em);
     }
 
-    .about__me__img {
+    .about-me__img {
        grid-row: 1 / -1;
        grid-column: 2;
        position: relative;
@@ -404,3 +429,5 @@ header {
 .social-list__link {
     padding: .5em;
 }
+
+
