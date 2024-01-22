@@ -304,10 +304,16 @@ header {
         max-width: 1000px;
         margin: 0 auto;
         }
-        
+    
+    .service h3, .service p {
+        margin-right: 95px;
+    }
+
     .service + .service {
-            margin-left: 2em;
-        }
+        margin-left: 2em;
+    }
+    
+
         
 
 }
@@ -378,6 +384,7 @@ header {
 .work__item {
     background: var(--clr-accent);
     overflow: hidden;
+    margin: 0 auto;
 }
 
 .work__img {
@@ -430,4 +437,15 @@ header {
     padding: .5em;
 }
 
+.portfolio-item-individual {
+    padding: 0 2em 2em;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.portfolio-item-individual p {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
